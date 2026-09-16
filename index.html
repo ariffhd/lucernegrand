@@ -135,10 +135,10 @@
         },
         {
           "@type": "Question",
-          "name": "What is the expected launch price for Lucerne Grand?",
+          "name": "What is the guide price for Lucerne Grand?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Official pricing has not been released. Analyst estimates suggest approximately $2,300-$2,600 psf based on CDL's land cost of $1,132 psf ppr."
+            "text": "Guide price after early bird discount starts from $1.498MM for a 2-Bedroom (624 sq ft), up to $3.398MM for a 4-Bedroom Premium + Entertainment (1,432 sq ft). Prices are subject to change without prior notice."
           }
         },
         {
@@ -538,9 +538,18 @@
       <a href="https://lucerne-grand.com.sg/lucerne-grand-showflat.html" class="hero-cta-primary">Book Showflat Appointment &rarr;</a>
       <a href="#factsheet" class="hero-cta-sec">View Project Details</a>
     </div>
-    <p style="margin-top:14px;font-size:11px;color:rgba(255,255,255,0.2);">Last Updated: <strong style="color:rgba(255,255,255,0.35);">16 April 2026</strong> &middot; Preview expected mid-2026 &mdash; register now for VVIP access.</p>
+    <p style="margin-top:14px;font-size:11px;color:rgba(255,255,255,0.2);">Last Updated: <strong id="last-updated-date" style="color:rgba(255,255,255,0.35);">16 April 2026</strong> &middot; Preview expected mid-2026 &mdash; register now for VVIP access.</p>
   </div>
 </section>
+<script>
+  (function(){
+    var el = document.getElementById('last-updated-date');
+    if(!el) return;
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var d = new Date();
+    el.textContent = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+  })();
+</script>
 
 <div class="update-bar">
   <div class="update-bar-inner">
@@ -644,16 +653,16 @@
 
 <section class="section" style="background:var(--navy);">
   <div class="section-inner">
-    <div class="section-label" style="color:var(--gold);">Price Analysis</div>
-    <h2 class="section-h2" style="color:var(--white);">Estimated Launch Price &mdash; <em>$2,300&ndash;$2,600 psf</em></h2>
-    <p class="section-intro" style="color:rgba(255,255,255,0.5);">Official pricing not released. Based on CDL's land cost of $1,132 psf ppr and comparable District 22 transactions.</p>
+    <div class="section-label" style="color:var(--gold);">Guide Price</div>
+    <h2 class="section-h2" style="color:var(--white);">Guide Price After Early Bird Discount &mdash; <em>From $1.498MM</em></h2>
+    <p class="section-intro" style="color:rgba(255,255,255,0.5);">Guide price after early bird discount, from $1.498MM for a 2-Bedroom. Prices are subject to change without prior notice.</p>
     <div class="loc-grid">
       <div>
-        <div class="psf-card"><div class="psf-label">Indicative Launch PSF</div><div class="psf-val">$2,300 &mdash; $2,600</div><div class="psf-sub">per sq ft &middot; analyst estimate &middot; subject to official release</div></div>
+        <div class="psf-card"><div class="psf-label">Guide Price From</div><div class="psf-val">$1.498MM</div><div class="psf-sub">2-Bedroom, 624 sq ft &middot; after early bird discount &middot; subject to change</div></div>
         <table class="data-table"><tbody>
-          <tr><td style="color:rgba(255,255,255,0.4);">Land cost (psf ppr)</td><td style="color:rgba(255,255,255,0.75);">~$1,132</td></tr>
-          <tr><td style="color:rgba(255,255,255,0.4);">Construction and fees</td><td style="color:rgba(255,255,255,0.75);">~$550</td></tr>
-          <tr class="highlight"><td>Estimated all-in cost</td><td>~$1,682 psf</td></tr>
+          <tr><td style="color:rgba(255,255,255,0.4);">2-Bedroom (624 sf)</td><td style="color:rgba(255,255,255,0.75);">$1.498MM</td></tr>
+          <tr><td style="color:rgba(255,255,255,0.4);">3-Bedroom (883 sf)</td><td style="color:rgba(255,255,255,0.75);">$1.988MM</td></tr>
+          <tr class="highlight"><td>4-Bedroom Premium (1,152 sf)</td><td>$2.788MM</td></tr>
         </tbody></table>
       </div>
       <div>
@@ -662,9 +671,9 @@
         <table class="data-table"><thead><tr><th>Project</th><th>Year</th><th>Launch PSF</th></tr></thead><tbody>
           <tr><td style="color:rgba(255,255,255,0.6);">LakeGarden Residences</td><td>2023</td><td>~$2,100</td></tr>
           <tr><td style="color:rgba(255,255,255,0.6);">Sora</td><td>2023</td><td>~$2,150</td></tr>
-          <tr class="highlight"><td>Lucerne Grand (est.)</td><td>2026</td><td>~$2,300+</td></tr>
+          <tr class="highlight"><td>Lucerne Grand</td><td>2026</td><td>~$2,251&ndash;$2,420</td></tr>
         </tbody></table>
-        <div class="note-box" style="margin-top:20px;">Lucerne Grand's direct MRT adjacency, CDL pedigree and JLD transformation premium justify a new price benchmark for District 22. <a href="https://lucerne-grand.com.sg/pricing.html">View full pricing analysis &rarr;</a></div>
+        <div class="note-box" style="margin-top:20px;">Lucerne Grand's direct MRT adjacency, CDL pedigree and JLD transformation premium justify a new price benchmark for District 22. <a href="https://lucerne-grand.com.sg/pricing.html">View full guide price table &rarr;</a></div>
       </div>
     </div>
   </div>
