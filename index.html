@@ -438,11 +438,6 @@
   .hero-cta-primary:hover{background:var(--gold-light);}
   .hero-cta-sec{color:rgba(255,255,255,0.4);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px;transition:color 0.2s;}
   .hero-cta-sec:hover{color:var(--gold-light);}
-  .update-bar{background:var(--navy-mid);border-bottom:1px solid rgba(184,147,74,0.15);padding:12px 0;}
-  .update-bar-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-  .update-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;white-space:nowrap;}
-  .update-dot{width:3px;height:3px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:0.5;}
-  .update-text{font-size:12px;color:rgba(255,255,255,0.45);font-weight:300;}
   .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:52px;}
   .project-details-wrap{background:var(--navy);padding:36px;margin-top:48px;}
   .project-details-title{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid rgba(184,147,74,0.12);}
@@ -482,7 +477,7 @@
     .hero-stats{grid-template-columns:1fr 1fr;}
     .project-grid,.loc-grid,.mrt-cards,.school-grid{grid-template-columns:1fr;gap:24px;}
     .inv-grid,.hub-grid{grid-template-columns:1fr;}
-    .hero-inner,.update-bar-inner{padding:0 20px;}
+    .hero-inner{padding:0 20px;}
   }
 
 </style>
@@ -550,18 +545,6 @@
     el.textContent = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
   })();
 </script>
-
-<div class="update-bar">
-  <div class="update-bar-inner">
-    <span class="update-label"><span class="topbar-pulse"></span>Updates</span>
-    <span class="update-dot"></span>
-    <span class="update-text">16 Apr 2026 &mdash; Showflat preview by appointment now open.</span>
-    <span class="update-dot"></span>
-    <span class="update-text">26 Mar 2026 &mdash; Project officially named Lucerne Grand by CDL.</span>
-    <span class="update-dot"></span>
-    <span class="update-text">Jun 2025 &mdash; CDL wins Lakeside Drive GLS at $608M ($1,132 psf ppr).</span>
-  </div>
-</div>
 
 <section class="section" style="background:var(--white);" id="overview">
   <div class="section-inner">
