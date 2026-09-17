@@ -248,6 +248,9 @@
   .form-textarea{resize:vertical;min-height:80px;}
   .form-submit{background:var(--gold);color:var(--white);border:none;padding:14px 40px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;margin-top:8px;}
   .form-submit:hover{background:var(--gold-light);}
+  .form-submit:disabled{opacity:0.6;cursor:not-allowed;}
+  .form-status-ok{color:#4caf6e;}
+  .form-status-err{color:#e0685a;}
   .form-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .form-checkbox{display:flex;align-items:flex-start;gap:10px;margin-top:8px;}
   .form-checkbox input{margin-top:4px;flex-shrink:0;accent-color:var(--gold);}
@@ -378,28 +381,33 @@
         <div class="section-label">Book Your Visit</div>
         <h2 class="section-h2">Lucerne Grand <em>Showflat Registration</em></h2>
         <p class="body-text">Register to book your preferred showflat appointment. Our sales team confirms within 1 hour. Direct CDL developer price — no commission payable.</p>
-        <div style="background:var(--navy);padding:32px;margin-top:20px;">
+        <form class="web3form" id="showflat-form" style="background:var(--navy);padding:32px;margin-top:20px;display:block;">
+          <input type="hidden" name="access_key" value="d304977d-b732-468b-be30-be3f809952ac">
+          <input type="hidden" name="subject" value="New Showflat Appointment Booking &mdash; Lucerne Grand">
+          <input type="hidden" name="from_name" value="Lucerne Grand Website">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
           <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(184,147,74,0.12);">Book Showflat Appointment</div>
-          <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-input" placeholder="Your full name"></div>
+          <div class="form-group"><label class="form-label">Full Name *</label><input type="text" name="full_name" required class="form-input" placeholder="Your full name"></div>
           <div class="form-2col">
-            <div class="form-group"><label class="form-label">Mobile *</label><input type="tel" class="form-input" placeholder="+65 9XXX XXXX"></div>
-            <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-input" placeholder="your@email.com"></div>
+            <div class="form-group"><label class="form-label">Mobile *</label><input type="tel" name="mobile" required class="form-input" placeholder="+65 9XXX XXXX"></div>
+            <div class="form-group"><label class="form-label">Email *</label><input type="email" name="email" required class="form-input" placeholder="your@email.com"></div>
           </div>
           <div class="form-2col">
-            <div class="form-group"><label class="form-label">Preferred Date</label><input type="date" class="form-input"></div>
+            <div class="form-group"><label class="form-label">Preferred Date</label><input type="date" name="preferred_date" class="form-input"></div>
             <div class="form-group"><label class="form-label">Preferred Time</label>
-              <select class="form-select"><option>-- Select --</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option></select></div>
+              <select class="form-select" name="preferred_time"><option>-- Select --</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option></select></div>
           </div>
           <div class="form-2col">
             <div class="form-group"><label class="form-label">Unit Type Interest</label>
-              <select class="form-select"><option>-- Select --</option><option>2-Bedroom</option><option>2-Bedroom + Study</option><option>3-Bedroom</option><option>3-Bedroom Premium + Study</option><option>4-Bedroom Premium</option><option>4-Bedroom Premium + Study</option><option>4-Bedroom Premium + Entertainment</option></select></div>
+              <select class="form-select" name="unit_type_interest"><option>-- Select --</option><option>2-Bedroom</option><option>2-Bedroom + Study</option><option>3-Bedroom</option><option>3-Bedroom Premium + Study</option><option>4-Bedroom Premium</option><option>4-Bedroom Premium + Study</option><option>4-Bedroom Premium + Entertainment</option></select></div>
             <div class="form-group"><label class="form-label">Buyer Profile</label>
-              <select class="form-select"><option>-- Select --</option><option>SC 1st property</option><option>SC 2nd property</option><option>Singapore PR</option><option>Foreigner</option></select></div>
+              <select class="form-select" name="buyer_profile"><option>-- Select --</option><option>SC 1st property</option><option>SC 2nd property</option><option>Singapore PR</option><option>Foreigner</option></select></div>
           </div>
-          <div class="form-checkbox"><input type="checkbox" id="pv" checked><label class="form-checkbox-label" for="pv">I agree to the <a href="https://lucerne-grand.com.sg/privacy-policy.html">Privacy Policy</a> and consent to being contacted regarding Lucerne Grand.</label></div>
-          <button class="form-submit" style="margin-top:16px;">Book Showflat Appointment</button>
+          <div class="form-checkbox"><input type="checkbox" id="pv" required checked><label class="form-checkbox-label" for="pv">I agree to the <a href="https://lucerne-grand.com.sg/privacy-policy.html">Privacy Policy</a> and consent to being contacted regarding Lucerne Grand.</label></div>
+          <button type="submit" class="form-submit" style="margin-top:16px;">Book Showflat Appointment</button>
+          <div class="form-status" style="margin-top:10px;font-size:13px;font-weight:500;"></div>
           <p style="font-size:11px;color:rgba(255,255,255,0.2);margin-top:10px;">Confirmation within 1 hour &middot; PDPA compliant</p>
-        </div>
+        </form>
       </div>
       <div>
         <div class="section-label">What to Expect</div>
@@ -508,5 +516,6 @@
   <a href="https://lucerne-grand.com.sg/balance-units-chart.html"><span class="ms-icon">&#128202;</span>Units</a>
   <a href="https://lucerne-grand.com.sg/lucerne-grand-showflat.html" style="background:rgba(184,147,74,0.15);color:var(--gold-light);"><span class="ms-icon">&#127968;</span>Showflat</a>
 </div>
+<script src="/web3forms.js"></script>
 </body>
 </html>

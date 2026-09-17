@@ -334,6 +334,9 @@
   .form-textarea{resize:vertical;min-height:80px;}
   .form-submit{background:var(--gold);color:var(--white);border:none;padding:14px 40px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;margin-top:8px;}
   .form-submit:hover{background:var(--gold-light);}
+  .form-submit:disabled{opacity:0.6;cursor:not-allowed;}
+  .form-status-ok{color:#4caf6e;}
+  .form-status-err{color:#e0685a;}
   .form-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .form-checkbox{display:flex;align-items:flex-start;gap:10px;margin-top:8px;}
   .form-checkbox input{margin-top:4px;flex-shrink:0;accent-color:var(--gold);}
@@ -710,19 +713,24 @@
     <div class="section-label" style="color:var(--gold);">VVIP Preview</div>
     <h2 class="reg-h2">Secure Your <em>Lucerne Grand VVIP Preview</em></h2>
     <p style="font-size:14px;color:rgba(255,255,255,0.45);max-width:520px;margin-bottom:36px;font-weight:300;line-height:1.8;">Register for priority access, direct developer pricing and floor plans upon release. No commission payable by buyers.</p>
-    <div class="reg-form-wrap">
+    <form class="reg-form-wrap web3form" id="register-form">
+      <input type="hidden" name="access_key" value="d304977d-b732-468b-be30-be3f809952ac">
+      <input type="hidden" name="subject" value="New VVIP Preview Registration &mdash; Lucerne Grand">
+      <input type="hidden" name="from_name" value="Lucerne Grand Website">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
       <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid rgba(184,147,74,0.12);">Register Your Interest</div>
       <div class="form-2col">
-        <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-input" placeholder="Your full name"></div>
-        <div class="form-group"><label class="form-label">Mobile Number *</label><input type="tel" class="form-input" placeholder="+65 9XXX XXXX"></div>
+        <div class="form-group"><label class="form-label">Full Name *</label><input type="text" name="full_name" required class="form-input" placeholder="Your full name"></div>
+        <div class="form-group"><label class="form-label">Mobile Number *</label><input type="tel" name="mobile" required class="form-input" placeholder="+65 9XXX XXXX"></div>
       </div>
-      <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-input" placeholder="your@email.com"></div>
+      <div class="form-group"><label class="form-label">Email Address *</label><input type="email" name="email" required class="form-input" placeholder="your@email.com"></div>
       <div class="form-group"><label class="form-label">Enquiry Type</label>
-        <select class="form-select"><option>-- Select --</option><option>Purchase</option><option>View Showflat</option><option>Financing</option><option>I want updates only</option></select>
+        <select class="form-select" name="enquiry_type"><option>-- Select --</option><option>Purchase</option><option>View Showflat</option><option>Financing</option><option>I want updates only</option></select>
       </div>
-      <div class="form-checkbox"><input type="checkbox" id="privacy" checked><label class="form-checkbox-label" for="privacy">I agree to the <a href="https://lucerne-grand.com.sg/privacy-policy.html">Privacy Policy</a> and consent to being contacted regarding Lucerne Grand.</label></div>
-      <button class="form-submit" style="margin-top:18px;">Submit Registration</button>
-    </div>
+      <div class="form-checkbox"><input type="checkbox" id="privacy" required checked><label class="form-checkbox-label" for="privacy">I agree to the <a href="https://lucerne-grand.com.sg/privacy-policy.html">Privacy Policy</a> and consent to being contacted regarding Lucerne Grand.</label></div>
+      <button type="submit" class="form-submit" style="margin-top:18px;">Submit Registration</button>
+      <div class="form-status" style="margin-top:12px;font-size:13px;font-weight:500;"></div>
+    </form>
   </div>
 </section>
 
@@ -802,5 +810,6 @@
   <a href="https://lucerne-grand.com.sg/balance-units-chart.html"><span class="ms-icon">&#128202;</span>Units</a>
   <a href="https://lucerne-grand.com.sg/lucerne-grand-showflat.html" style="background:rgba(184,147,74,0.15);color:var(--gold-light);"><span class="ms-icon">&#127968;</span>Showflat</a>
 </div>
+<script src="/web3forms.js"></script>
 </body>
 </html>
